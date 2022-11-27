@@ -1,11 +1,11 @@
 import * as VueRouter from 'vue-router'
 
-import Home from './pages/Index.vue'
-import About from './pages/About.vue'
+import home from './pages/index.vue'
+import about from './pages/about.vue'
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/about', component: About },
+  { path: '/', component: home },
+  { path: '/about', component: about },
 ]
 
 export const router = VueRouter.createRouter({
