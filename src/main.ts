@@ -13,6 +13,14 @@ import vuetify from './vuetify.config'
 import 'vuetify/styles'
 import '@mdi/font/css/materialdesignicons.css'
 
+// global components
+import logo from './components/logo/index.vue'
+
 const pinia = createPinia()
 
-createApp(App).use(router).use(pinia).use(vuetify).mount('#app')
+createApp(App)
+  .use(router)
+  .use(pinia)
+  .use(vuetify)
+  .component('logo', logo)
+  .mount('#app')
