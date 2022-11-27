@@ -69,6 +69,7 @@
             <v-btn
               :color="isSelected ? 'primary' : 'dark'"
               icon="mdi-record"
+              class="mx-0"
               @click="toggle"></v-btn>
           </v-item>
         </v-item-group>
