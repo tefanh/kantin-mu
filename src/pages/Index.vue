@@ -1,8 +1,8 @@
 <script lang="ts">
-  import intro from '../components/content/intro.vue'
+  import Intro from '../components/content/Intro.vue'
   export default {
     components: {
-      intro,
+      Intro,
     },
     data: () => ({}),
     created() {
@@ -12,6 +12,6 @@
 </script>
 <template>
   <div>
-    <intro />
+    <Intro />
   </div>
 </template>
