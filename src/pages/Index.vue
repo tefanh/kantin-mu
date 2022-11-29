@@ -1,17 +1,6 @@
 <script lang="ts">
-  import Intro from '../components/content/Intro.vue'
-  export default {
-    components: {
-      Intro,
-    },
-    data: () => ({}),
-    created() {
-      console.log(this.$vuetify)
-    },
-  }
+  export default {}
 </script>
 <template>
-  <div>
-    <Intro />
-  </div>
+  <div>ini adalah home</div>
 </template>
