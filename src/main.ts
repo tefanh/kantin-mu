@@ -14,6 +14,7 @@ import 'vuetify/styles'
 import '@mdi/font/css/materialdesignicons.css'
 
 // global components
+import Nav from './components/nav/Index.vue'
 import Logo from './components/logo/Index.vue'
 
 const pinia = createPinia()
@@ -23,4 +24,5 @@ createApp(App)
   .use(pinia)
   .use(vuetify)
   .component('Logo', Logo)
+  .component('Nav', Nav)
   .mount('#app')

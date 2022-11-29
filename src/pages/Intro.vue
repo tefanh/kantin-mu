@@ -24,6 +24,11 @@
         },
       ],
     }),
+    methods: {
+      skip() {
+        this.$router.push('/login')
+      },
+    },
     computed: {
       totalItems() {
         return this.items.length
@@ -34,20 +39,9 @@
 <template>
   <div
     class="container__intro d-flex flex-column justify-space-between align-center">
-    <v-toolbar color="white" class="mb-8 fullwidth">
-      <logo class="ml-5" :width="28" />
-      <v-spacer />
-      <v-btn
-        type="button"
-        class="font-weight-bold text-capitalize"
-        flat
-        size="small"
-        color="primary">
-        Lewati
-      </v-btn>
-    </v-toolbar>
+    <Nav actionTitle="Lewati" @click:action="skip" />
 
-    <v-card rounded="0" variant="flat" flat class="fullwidth mb-8">
+    <v-card rounded="0" variant="flat" flat class="fullwidth my-8">
       <v-window v-model="activeSlide">
         <v-window-item
           v-for="item in items"

@@ -1,36 +1,30 @@
-<script setup lang="ts">
-  import { storeToRefs } from 'pinia'
-  import { useStore } from '../../stores'
-  import { useRouter } from 'vue-router'
-
-  const router = useRouter()
-  const store = useStore()
-  const { getPageTitle } = storeToRefs(store)
-  function goToHome() {
-    router.push('/')
-  }
-  function goToAbout() {
-    router.push('/about')
+<script lang="ts">
+  export default {
+    props: {
+      actionTitle: {
+        type: String,
+        default: () => 'Action',
+      },
+    },
+    methods: {
+      actionClicked() {
+        this.$emit('click:action', true)
+      },
+    },
   }
 </script>
 <template>
-  <v-toolbar density="compact" color="white">
-    <v-app-bar-nav-icon></v-app-bar-nav-icon>
-    <v-toolbar-title>{{ getPageTitle }}</v-toolbar-title>
-    <v-spacer></v-spacer>
+  <v-toolbar color="white" class="fullwidth">
+    <logo class="ml-5" :width="28" />
+    <v-spacer />
     <v-btn
       type="button"
-      text
       class="font-weight-bold text-capitalize"
-      @click="goToHome">
-      Home
-    </v-btn>
-    <v-btn
-      type="button"
-      text
-      class="font-weight-bold text-capitalize"
-      @click="goToAbout">
-      About
+      flat
+      size="small"
+      color="primary"
+      @click="actionClicked">
+      {{ actionTitle }}
     </v-btn>
   </v-toolbar>
 </template>
