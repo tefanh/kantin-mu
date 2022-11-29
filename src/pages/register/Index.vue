@@ -5,6 +5,7 @@
         isValid: true,
         username: '',
         password: '',
+        passwordConfirm: '',
       },
       state: {
         showPassword: false,
@@ -17,10 +18,10 @@
     <Nav actionTitle="Lewati" />
     <v-container>
       <v-form :modelValue="form.isValid">
-        <h6 class="text-h6 mb-2">Masuk ke akun anda</h6>
+        <h6 class="text-h6 mb-2">Buat akun</h6>
         <p class="mb-6 text-caption">
-          Senang bertemu Anda lagi, masukkan detail Anda di bawah ini untuk
-          melanjutkan pemesanan.
+          Selamat datang teman, masukkan detail Anda sehingga mari kita mulai
+          memesan makanan.
         </p>
 
         <div>
@@ -41,12 +42,14 @@
             density="comfortable" />
         </div>
 
-        <span class="text-caption"
-          >Lupa Password ?
-          <router-link to="/forgot-password" class="text-red"
-            >Klik disini</router-link
-          ></span
-        >
+        <div>
+          <p class="text-body-2 mb-1">Konfirmasi Password</p>
+          <v-text-field
+            type="password"
+            placeholder="Masukan password"
+            variant="outlined"
+            density="comfortable" />
+        </div>
 
         <div class="login__actions fullwidth">
           <v-container>
@@ -58,12 +61,12 @@
               rounded
               class="font-weight-bold text-capitalize mb-4"
               :disabled="!form.isValid">
-              Masuk
+              Daftar
             </v-btn>
             <span class="text-caption"
-              >Belum punya akun ?
-              <router-link to="/register" class="text-red"
-                >Daftar sekarang</router-link
+              >Sudah punya akun ?
+              <router-link to="/login" class="text-red"
+                >Login disini</router-link
               ></span
             >
           </v-container>
